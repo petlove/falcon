@@ -2,7 +2,7 @@
 
 module Falcon
   class Options
-    ACCESSORS = %i[raise_error url path headers params payload after].freeze
+    ACCESSORS = %i[raise_error url path headers params payload after suffix].freeze
 
     attr_accessor(*ACCESSORS)
 
@@ -15,7 +15,7 @@ module Falcon
     end
 
     def uri
-      [[@url, @path].compact.join('/'), parsed_params].compact.join('?')
+      [[@url, @path, @suffix].compact.join('/'), parsed_params].compact.join('?')
     end
 
     def after!(response)

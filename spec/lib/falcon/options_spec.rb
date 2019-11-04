@@ -9,10 +9,11 @@ RSpec.describe Falcon::Options, type: :model do
       {
         raise_error: true,
         url: 'https://www.petlove.com.br',
-        path: '/mini-adulto-cao-adulto-pequeno-porte-royal-canin/p',
+        path: '/mini-adulto-cao-adulto-pequeno-porte-royal-canin',
         headers: { 'Content-Type' => 'application/json' },
         params: { brand: 'royal canin', size: 'p' },
-        payload: { weigth: 7.5, promotion: false }
+        payload: { weigth: 7.5, promotion: false },
+        suffix: 'p'
       }
     end
 
@@ -26,9 +27,10 @@ RSpec.describe Falcon::Options, type: :model do
       {
         raise_error: true,
         url: 'https://www.petlove.com.br',
-        path: '/mini-adulto-cao-adulto-pequeno-porte-royal-canin/p',
+        path: '/mini-adulto-cao-adulto-pequeno-porte-royal-canin',
         params: { brand: 'royal canin', size: 'p' },
-        payload: { weigth: 7.5, promotion: false }
+        payload: { weigth: 7.5, promotion: false },
+        suffix: 'p'
       }
     end
     let(:clone_options) { { params: { brand: 'premier', size: 'g' } } }
@@ -42,7 +44,8 @@ RSpec.describe Falcon::Options, type: :model do
     let(:options) do
       {
         url: 'https://www.petlove.com.br',
-        path: 'porte-royal-canin/p',
+        path: 'porte-royal-canin',
+        suffix: 'p',
         params: { brand: 'royal', size: 'p' }
       }
     end

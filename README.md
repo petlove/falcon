@@ -28,11 +28,10 @@ module Cloudflare
       extend Falcon::Client
 
       RECORD_ALREADY_EXIST_ERROR_MESSAGE = 'The record already exists.'
-      PATH = "zones/#{ENV['CLOUDFLARE_WHITELABEL_ZONE_ID']}/dns_records"
 
-      falcon_options raise_error: true,
+    falcon_options raise_error: true,
                      url: 'https://api.cloudflare.com/client/v4/',
-                     path: PATH,
+                     path: "zones/#{ENV['CLOUDFLARE_WHITELABEL_ZONE_ID']}/dns_records",
                      headers: {
                        'Content-Type' => 'application/json',
                        'Authorization' => ENV['CLOUDFLARE_API_TOKEN']
@@ -52,14 +51,14 @@ module Cloudflare
 
         def update!(dns_record)
           put(
-            path: "#{PATH}/#{dns_record.id}",
+            suffix: dns_record.id,
             payload: dns_record.as_json(only: %w[name type content]),
             after: ->(response) { handle_errors(response) unless response.success? }
           )
         end
 
         def destroy!(dns_record)
-          delete(path: "#{PATH}/#{dns_record.id}")
+          delete(suffix: dns_record.id)
         end
 
         private
@@ -94,6 +93,7 @@ Are available this options:
 | `raise_error` | boolean | If true and if the request results in a failure will be raised a `Falcon::Error` with the original faraday error in response |
 | `url` | string | The url that you want to request. It'll be joined to make uri |
 | `path` | string | The resource that you want to request. It'll be joined to make uri |
+| `suffix` | string | If you want to put a suffix like an id you can use this option. It'll be joined to make uri |
 | `params` | hash | The query params that you want to pass. It'll be joined to make uri |
 | `headers` | hash | The headers that you want to pass |
 | `payload` | hash | The payload that you want to pass |
