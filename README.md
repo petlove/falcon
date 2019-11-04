@@ -14,10 +14,6 @@ Add this line to your application's Gemfile:
 gem 'falcon', github: 'petlove/falcon'
 ```
 
-## Why Faraday
-
-We use the gem oauth2 in most of our projects and this lib brings the gem faraday to make requests. Although, this gem is the best HTTP Client by [Ruby Toolbox](https://www.ruby-toolbox.com/projects/faraday).
-
 ## Using
 
 To use this gem, you can extend the module `Falcon::Client` and set the options. You could set the options before through the method `falcon_options` or direct in the request method, like:
