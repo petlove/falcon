@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: ENV[CLOUDFLARE_API_URL]/zones/ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]/dns_records
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - ENV[CLOUDFLARE_API_TOKEN]
+      User-Agent:
+      - Faraday v0.17.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Nov 2019 03:07:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc2b899b974745bd6f999fb06a30cb8c41572750448; expires=Mon, 02-Nov-20
+        03:07:28 GMT; path=/; domain=.api.cloudflare.com; HttpOnly
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Ray:
+      - 52fb235efd1a4c6a-GRU
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Expires:
+      - Sun, 25 Jan 1981 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Served-In-Seconds:
+      - '0.064'
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":[{"id":"c23f02f2ce80b3ad76064476b4c239d4","type":"A","name":"adfasdfaf.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-10T22:35:49.082690Z","created_on":"2019-10-10T22:35:49.082690Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"b4124caf1ac807fc0d5f0b114500a562","type":"A","name":"bradtke.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-22T17:27:21.780297Z","created_on":"2019-10-22T17:27:21.780297Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"29b9d545d5bbba93e19331482837f6c4","type":"A","name":"brun1nho.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-11-01T15:43:49.134632Z","created_on":"2019-11-01T15:43:49.134632Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"3bc52491082580c6f944903a8dd66a06","type":"A","name":"bruninho.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-28T13:28:15.608513Z","created_on":"2019-10-28T13:28:15.608513Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"fcda832edd668ae9a0f43c4d40ef0613","type":"A","name":"bruninhopets.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-11-01T12:15:37.289832Z","created_on":"2019-11-01T12:15:37.289832Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"cacc352c1514cc01e824024d4f769f6f","type":"A","name":"cain.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-31T21:36:34.157015Z","created_on":"2019-10-31T21:36:34.157015Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"501dbb0d7bb54b5db9e83fa0f42ddb2a","type":"A","name":"crona.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-31T21:36:37.414434Z","created_on":"2019-10-31T21:36:37.414434Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"3299f2de3cb5df5c890df9e150363351","type":"A","name":"dog-bulldog.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-10T18:48:21.481548Z","created_on":"2019-10-10T18:48:21.481548Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"48fab0648906c3a6f9a2258c5e1755e2","type":"A","name":"dog-stag-bulldog.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-28T13:20:33.067949Z","created_on":"2019-10-28T13:20:33.067949Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"5f61b27509a9558db94c9b9fe21d6279","type":"A","name":"dog-stagingaa.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-08T22:45:36.737285Z","created_on":"2019-10-08T22:45:36.737285Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"2a145d6fec62b1d465ebb7e3460638f8","type":"A","name":"dog-staginga.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-08T22:19:00.052746Z","created_on":"2019-10-08T22:19:00.052746Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"0a77c76cb59a4d28f91d1ac617d3d967","type":"A","name":"dog-staging-bulldoga.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-15T16:59:28.486949Z","created_on":"2019-10-15T16:59:28.486949Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"962dafffdb33f052864738111ae75d0a","type":"A","name":"dog-staging-bulldog.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-09T21:29:43.530302Z","created_on":"2019-10-09T21:29:43.530302Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"45250ecbd93496c472911c6eedec2664","type":"A","name":"dog-staging.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-02T13:08:13.605497Z","created_on":"2019-10-02T13:08:13.605497Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"d43ace2a6e4860f622780a8073c36e9c","type":"A","name":"dra-giovana.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-10T22:00:00.189390Z","created_on":"2019-10-10T22:00:00.189390Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"d65948ec0ce9014389bd1d4c4eb55d9a","type":"A","name":"dr-doc5.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-09T19:35:49.740055Z","created_on":"2019-10-09T19:35:49.740055Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"fbe75ea42dad61a845255fd682ed2bcd","type":"A","name":"dr-doc.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-09T21:25:58.013455Z","created_on":"2019-10-09T21:25:58.013455Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"99e2c0c8999df5cfba119d7c61cb5b5d","type":"A","name":"dr-lincoln.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-07T14:01:27.242723Z","created_on":"2019-10-07T14:01:27.242723Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"60ff92c0c68f98642aed9e670a2b0a50","type":"A","name":"dr-marcelo.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-10T22:33:05.699245Z","created_on":"2019-10-10T22:33:05.699245Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},{"id":"e9d7d953cd97829264f418c355aa75aa","type":"A","name":"ebert.petfoodnatural.com.br","content":"35.243.169.92","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-10-31T21:36:21.525518Z","created_on":"2019-10-31T21:36:21.525518Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}}],"result_info":{"page":1,"per_page":20,"total_pages":4,"count":20,"total_count":80},"success":true,"errors":[],"messages":[]}'
+    http_version: 
+  recorded_at: Sun, 03 Nov 2019 03:07:28 GMT
+recorded_with: VCR 5.0.0

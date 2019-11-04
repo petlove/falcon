@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: ENV[CLOUDFLARE_API_URL]/zones/ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]/dns_records/38e6f20282615d309018ca4edb56f8d7
+    body:
+      encoding: UTF-8
+      string: '{"name":"linqueta01","type":"A","content":"ENV[CLOUDFLARE_SERVICE_IP]","proxied":false}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - ENV[CLOUDFLARE_API_TOKEN]
+      User-Agent:
+      - Faraday v0.17.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Nov 2019 03:52:18 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d7fedc44ed111b1370d5a2e2a6d35fe3e1572753138; expires=Mon, 02-Nov-20
+        03:52:18 GMT; path=/; domain=.api.cloudflare.com; HttpOnly
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Ray:
+      - 52fb650a5e52d000-GRU
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Expires:
+      - Sun, 25 Jan 1981 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Served-In-Seconds:
+      - '0.048'
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":{"id":"38e6f20282615d309018ca4edb56f8d7","type":"A","name":"linqueta01.petfoodnatural.com.br","content":"ENV[CLOUDFLARE_SERVICE_IP]","proxiable":true,"proxied":false,"ttl":1,"locked":false,"zone_id":"ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]","zone_name":"petfoodnatural.com.br","modified_on":"2019-11-03T03:52:17.623515Z","created_on":"2019-11-03T03:52:17.623515Z","meta":{"auto_added":false,"managed_by_apps":false,"managed_by_argo_tunnel":false}},"success":true,"errors":[],"messages":[]}'
+    http_version:
+  recorded_at: Sun, 03 Nov 2019 03:52:18 GMT
+recorded_with: VCR 5.0.0

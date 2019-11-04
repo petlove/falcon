@@ -1,0 +1,6 @@
+TODO
+/coverage/*
+.rspec_status
+*.gem
+*.development
+*.test

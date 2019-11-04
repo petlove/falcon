@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: ENV[CLOUDFLARE_API_URL]/zones/ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]/dns_records/38e6f20282615d309018ca4edb56f8d7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - ENV[CLOUDFLARE_API_TOKEN]
+      User-Agent:
+      - Faraday v0.17.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Nov 2019 03:55:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dbe43091a3cb71c41bfcfe321009750331572753357; expires=Mon, 02-Nov-20
+        03:55:57 GMT; path=/; domain=.api.cloudflare.com; HttpOnly
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Ray:
+      - 52fb6a62387b4c9a-GRU
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Expires:
+      - Sun, 25 Jan 1981 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Served-In-Seconds:
+      - '0.092'
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":{"id":"38e6f20282615d309018ca4edb56f8d7"},"success":true,"errors":[],"messages":[]}'
+    http_version: 
+  recorded_at: Sun, 03 Nov 2019 03:55:57 GMT
+recorded_with: VCR 5.0.0

@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'falcon'
+require 'irb'
+require 'pry'
+require 'dotenv'
+
+Dotenv.load('.env.development')
+
+IRB.start(__FILE__)

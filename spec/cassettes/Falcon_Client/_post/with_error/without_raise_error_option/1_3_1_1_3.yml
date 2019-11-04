@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: ENV[CLOUDFLARE_API_URL]/zones/ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]/dns_records
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.17.0
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Date:
+      - Sun, 03 Nov 2019 03:21:33 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d0e63d368ae31c5224228bd953f77ec621572751293; expires=Mon, 02-Nov-20
+        03:21:33 GMT; path=/; domain=.api.cloudflare.com; HttpOnly
+      - vses2=vuefh8g4sai1qmjp3nsh8m2haigep18t; path=/; domain=dash.cloudflare.com;
+        secure; HttpOnly
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Ray:
+      - 52fb37fdffee4bd3-GRU
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Expires:
+      - Sun, 25 Jan 1981 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Served-In-Seconds:
+      - '0.012'
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"errors":[{"code":9106,"message":"Missing X-Auth-Email
+        header"},{"code":9107,"message":"Missing X-Auth-Key header"}],"messages":[],"result":null}'
+    http_version: 
+  recorded_at: Sun, 03 Nov 2019 03:21:33 GMT
+recorded_with: VCR 5.0.0
