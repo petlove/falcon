@@ -35,7 +35,7 @@ module Cloudflare
       PATH = "zones/#{ENV['CLOUDFLARE_WHITELABEL_ZONE_ID']}/dns_records"
 
       falcon_options raise_error: true,
-                     url: ENV['CLOUDFLARE_API_URL'],
+                     url: 'https://api.cloudflare.com/client/v4/',
                      path: PATH,
                      headers: {
                        'Content-Type' => 'application/json',

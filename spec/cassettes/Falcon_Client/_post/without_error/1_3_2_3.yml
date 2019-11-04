@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: ENV[CLOUDFLARE_API_URL]/zones/ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]/dns_records
+    uri: https://api.cloudflare.com/client/v4//zones/ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]/dns_records
     body:
       encoding: UTF-8
       string: '{"name":"linqueta01","type":"A","content":"ENV[CLOUDFLARE_SERVICE_IP]","proxied":true}'
