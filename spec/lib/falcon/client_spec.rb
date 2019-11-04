@@ -130,7 +130,7 @@ RSpec.describe Falcon::Client, type: :module do
         {
           headers: {
             'Content-Type' => 'application/json',
-            'Authorization' => ENV['CLOUDFLARE_API_TOKEN']
+            'Authorization' => "Bearer #{ENV['CLOUDFLARE_API_TOKEN']}"
           }
         }
       end
@@ -242,7 +242,7 @@ RSpec.describe Falcon::Client, type: :module do
         {
           headers: {
             'Content-Type' => 'application/json',
-            'Authorization' => ENV['CLOUDFLARE_API_TOKEN']
+            'Authorization' => "Bearer #{ENV['CLOUDFLARE_API_TOKEN']}"
           },
           payload: {
             name: 'linqueta01',
@@ -360,7 +360,7 @@ RSpec.describe Falcon::Client, type: :module do
         {
           headers: {
             'Content-Type' => 'application/json',
-            'Authorization' => ENV['CLOUDFLARE_API_TOKEN']
+            'Authorization' => "Bearer #{ENV['CLOUDFLARE_API_TOKEN']}"
           },
           payload: {
             name: 'linqueta01',
@@ -478,7 +478,7 @@ RSpec.describe Falcon::Client, type: :module do
         {
           headers: {
             'Content-Type' => 'application/json',
-            'Authorization' => ENV['CLOUDFLARE_API_TOKEN']
+            'Authorization' => "Bearer #{ENV['CLOUDFLARE_API_TOKEN']}"
           }
         }
       end
