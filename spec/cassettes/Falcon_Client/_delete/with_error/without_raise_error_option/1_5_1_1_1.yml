@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: ENV[CLOUDFLARE_API_URL]/zones/ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]/dns_records/38e6f20282615d309018ca4edb56f8d7
+    uri: https://api.cloudflare.com/client/v4//zones/ENV[CLOUDFLARE_WHITELABEL_ZONE_ID]/dns_records/38e6f20282615d309018ca4edb56f8d7
     body:
       encoding: US-ASCII
       string: ''
@@ -62,6 +62,6 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"success":false,"errors":[{"code":9106,"message":"Missing X-Auth-Email
         header"},{"code":9107,"message":"Missing X-Auth-Key header"}],"messages":[],"result":null}'
-    http_version: 
+    http_version:
   recorded_at: Sun, 03 Nov 2019 03:55:53 GMT
 recorded_with: VCR 5.0.0

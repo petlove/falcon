@@ -34,7 +34,7 @@ RSpec.describe Falcon::Client, type: :module do
       extend Falcon::Client
 
       falcon_options raise_error: true,
-                     url: ENV['CLOUDFLARE_API_URL'],
+                     url: 'https://api.cloudflare.com/client/v4/',
                      path: "zones/#{ENV['CLOUDFLARE_WHITELABEL_ZONE_ID']}/dns_records",
                      headers: {
                        'Content-Type' => 'application/json'
@@ -146,7 +146,7 @@ RSpec.describe Falcon::Client, type: :module do
       extend Falcon::Client
 
       falcon_options raise_error: true,
-                     url: ENV['CLOUDFLARE_API_URL'],
+                     url: 'https://api.cloudflare.com/client/v4/',
                      path: "zones/#{ENV['CLOUDFLARE_WHITELABEL_ZONE_ID']}/dns_records",
                      headers: {
                        'Content-Type' => 'application/json'
@@ -264,7 +264,7 @@ RSpec.describe Falcon::Client, type: :module do
       extend Falcon::Client
 
       falcon_options raise_error: true,
-                     url: ENV['CLOUDFLARE_API_URL'],
+                     url: 'https://api.cloudflare.com/client/v4/',
                      path: "zones/#{ENV['CLOUDFLARE_WHITELABEL_ZONE_ID']}/dns_records/38e6f20282615d309018ca4edb56f8d7",
                      headers: {
                        'Content-Type' => 'application/json'
@@ -382,7 +382,7 @@ RSpec.describe Falcon::Client, type: :module do
       extend Falcon::Client
 
       falcon_options raise_error: true,
-                     url: ENV['CLOUDFLARE_API_URL'],
+                     url: 'https://api.cloudflare.com/client/v4/',
                      path: "zones/#{ENV['CLOUDFLARE_WHITELABEL_ZONE_ID']}/dns_records/38e6f20282615d309018ca4edb56f8d7",
                      headers: {
                        'Content-Type' => 'application/json'

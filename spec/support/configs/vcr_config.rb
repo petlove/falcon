@@ -2,9 +2,14 @@
 
 require 'vcr'
 require 'webmock'
-require 'dotenv'
 
 class VCRConfig
+  FILTER = %w[
+    CLOUDFLARE_API_TOKEN
+    CLOUDFLARE_WHITELABEL_ZONE_ID
+    CLOUDFLARE_SERVICE_IP
+  ].freeze
+
   def self.configure
     VCR.configure do |config|
       config.allow_http_connections_when_no_cassette = false
@@ -13,8 +18,8 @@ class VCRConfig
       config.ignore_localhost = true
       config.configure_rspec_metadata!
 
-      Dotenv.load.merge(Dotenv.load('.env.test')).each do |k, v|
-        config.filter_sensitive_data("ENV[#{k}]") { v }
+      FILTER.each do |env|
+        config.filter_sensitive_data("ENV[#{env}]") { ENV[env] }
       end
     end
   end
