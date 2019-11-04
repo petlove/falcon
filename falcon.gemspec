@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['linqueta']
   spec.email         = ['lincolnrodrs@gmail.com']
 
-  spec.summary       = 'An easy and customisable http client using Faraday'
-  spec.description   = 'An easy and customisable http client using Faraday'
+  spec.summary       = 'A customizable http client using Faraday'
+  spec.description   = 'A customizable http client using Faraday'
   spec.homepage      = 'https://https://github.com/petlove/falcon'
   spec.license       = 'MIT'
 
