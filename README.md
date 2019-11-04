@@ -16,7 +16,7 @@ gem 'falcon', github: 'petlove/falcon'
 
 ## Why Faraday
 
-We use the gem oauth2 in most of our projects and this lib brings the gem faraday to make requests. Although, this gem is better classified by the [Ruby Toolbox for HTTP Client](https://www.ruby-toolbox.com/projects/faraday).
+We use the gem oauth2 in most of our projects and this lib brings the gem faraday to make requests. Although, this gem is the best HTTP Client by [Ruby Toolbox](https://www.ruby-toolbox.com/projects/faraday).
 
 ## Using
 
