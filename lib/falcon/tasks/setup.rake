@@ -21,6 +21,7 @@ def settings
     # frozen_string_literal: true
 
     Falcon.configure do |config|
+      # config.add :option_name, option_params_hash
       # config.add :parse,
       #            raise_error: true,
       #            url: ENV['PARSE_URL'],
