@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://https://github.com/petlove/falcon'
   spec.license       = 'MIT'
 
-  spec.files         = Dir['{lib}/**/*', 'CHANGELOG.md', 'MIT-LICENSE', 'README.md']
+  spec.files         = Dir['{config,lib}/**/*', 'CHANGELOG.md', 'MIT-LICENSE', 'README.md']
 
   spec.add_dependency 'faraday', '>= 0.17.0'
 

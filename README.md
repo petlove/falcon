@@ -14,6 +14,31 @@ Add this line to your application's Gemfile:
 gem 'falcon', github: 'petlove/falcon'
 ```
 
+and run:
+
+```
+rails falcon:install
+```
+
+## Settings
+Set the settings in the file _config/initializers/falcon.rb_:
+
+```ruby
+# frozen_string_literal: true
+
+Falcon.configure do |config|
+  # config.add :option_name, option_params_hash
+  # config.add :parse,
+  #            raise_error: true,
+  #            url: ENV['PARSE_URL'],
+  #            header: {
+  #              'Content-Type' => 'application/json',
+  #              'X-Parse-Application-Id' => ENV['PARSE_APPLICATION_ID'],
+  #              'X-Parse-REST-API-Key' => ENV['PARSE_REST_API_KEY']
+  #            }
+end
+```
+
 ## Using
 
 To use this gem, you can extend the module `Falcon::Client` and set the options. You could set the options before through the method `falcon_options` or direct in the request method, like:
@@ -29,13 +54,19 @@ module Cloudflare
 
       RECORD_ALREADY_EXIST_ERROR_MESSAGE = 'The record already exists.'
 
-    falcon_options raise_error: true,
+      falcon_options raise_error: true,
                      url: 'https://api.cloudflare.com/client/v4/',
                      path: "zones/#{ENV['CLOUDFLARE_WHITELABEL_ZONE_ID']}/dns_records",
                      headers: {
                        'Content-Type' => 'application/json',
                        'Authorization' => ENV['CLOUDFLARE_API_TOKEN']
                      }
+
+      ## If you add the option in the initilializer you can do it:
+      ## falcon_option :cloudflare
+
+      ## If you want to customize the option saved you cad do it:
+      ## falcon_option :cloudflare, suffix: 20, raise_error: false
 
       class << self
         def find!(name)

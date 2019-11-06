@@ -23,7 +23,7 @@ module Falcon
     end
 
     def attributes!(options)
-      options.slice(*ACCESSORS).each { |k, v| instance_variable_set("@#{k}", v) }
+      options.to_h.slice(*ACCESSORS).each { |k, v| instance_variable_set("@#{k}", v) }
     end
 
     private

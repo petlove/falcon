@@ -6,11 +6,13 @@ require 'json'
 module Falcon
   module Client
     def self.extended(base)
-      base.define_singleton_method(:falcon_default_options) { @falcon_default_options }
+      base.define_singleton_method(:falcon_default_options) { Falcon.configuration.option(name, options) }
     end
 
-    def falcon_options(options)
-      define_singleton_method(:falcon_default_options) { @falcon_default_options ||= Options.new(options) }
+    def falcon_options(name, options = {})
+      define_singleton_method(:falcon_default_options) do
+        @falcon_default_options ||= Falcon.configuration.option(name, options)
+      end
     end
 
     def get(options = {})
