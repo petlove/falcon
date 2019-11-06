@@ -15,7 +15,8 @@ module Falcon
     end
 
     def option(name, options)
-      update_option(option_by_name(name), options)
+      option_by_name(name).then { |option| update_option(option, options || {}) }
+                          .then { |option| apply_helpers(option, options || {}) }
     end
 
     private
@@ -30,6 +31,16 @@ module Falcon
 
     def find_option(name)
       @options[name] || Options.new
+    end
+
+    def apply_helpers(option, options)
+      option.tap do
+        merge_in_headers(option, options)
+      end
+    end
+
+    def merge_in_headers(option, options)
+      (option.headers ||= {}).merge!(options[:merge_in_headers]) if options[:merge_in_headers]
     end
   end
 end
