@@ -63,10 +63,10 @@ module Cloudflare
                      }
 
       ## If you add the option in the initilializer you can do it:
-      ## falcon_option :cloudflare
+      ## falcon_options :cloudflare
 
       ## If you want to customize the option saved you cad do it:
-      ## falcon_option :cloudflare, suffix: 20, raise_error: false
+      ## falcon_options :cloudflare, suffix: 20, raise_error: false
 
       class << self
         def find!(name)
