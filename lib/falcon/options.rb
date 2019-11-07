@@ -27,14 +27,6 @@ module Falcon
       @after&.call(response)
     end
 
-    def attributes!(options)
-      options.to_h.slice(*ACCESSORS).each { |k, v| instance_variable_set("@#{k}", v) }
-    end
-
-    def helpers!(options)
-      merge_in_headers(options) if options[:merge_in_headers]
-    end
-
     private
 
     def parsed_params
@@ -46,6 +38,14 @@ module Falcon
 
     def merge_in_headers(options)
       (@headers ||= {}).merge!(options[:merge_in_headers])
+    end
+
+    def attributes!(options)
+      options.to_h.slice(*ACCESSORS).each { |k, v| instance_variable_set("@#{k}", v) }
+    end
+
+    def helpers!(options)
+      merge_in_headers(options) if options[:merge_in_headers]
     end
   end
 end
