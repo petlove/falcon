@@ -70,7 +70,7 @@ module Cloudflare
 
       class << self
         def find!(name)
-          get(params: { name: name })
+          get(params: { name: name }, merge_in_headers: { user_token: 'blablabla' })
         end
 
         def create!(dns_record)

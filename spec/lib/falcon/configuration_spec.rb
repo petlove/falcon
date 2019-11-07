@@ -54,15 +54,18 @@ RSpec.describe Falcon::Configuration, type: :model do
       {
         raise_error: true,
         url: 'https://parse.parseaccount.com.br',
-        headers: {
-          'Content-Type' => 'application/json',
-          'X-Parse-Application-Id' => SecureRandom.uuid,
-          'X-Parse-REST-API-Key' => SecureRandom.uuid
-        },
+        headers: headers,
         path: 'parse/users',
         params: { a: 'a' },
         payload: { b: 'b' },
         suffix: 10
+      }
+    end
+    let(:headers) do
+      {
+        'Content-Type' => 'application/json',
+        'X-Parse-Application-Id' => SecureRandom.uuid,
+        'X-Parse-REST-API-Key' => SecureRandom.uuid
       }
     end
 
@@ -126,7 +129,12 @@ RSpec.describe Falcon::Configuration, type: :model do
     end
 
     context 'with name and options' do
-      let(:options) { { suffix: 20 } }
+      let(:options) do
+        {
+          suffix: 20,
+          merge_in_headers: { 'X-Parse-Session-Token' => 1020 }
+        }
+      end
 
       context 'when name is a hash' do
         let(:name) { default_options }
@@ -144,7 +152,7 @@ RSpec.describe Falcon::Configuration, type: :model do
             is_expected.to have_attributes(
               raise_error: nil,
               url: nil,
-              headers: nil,
+              headers: { 'X-Parse-Session-Token' => 1020 },
               path: nil,
               params: nil,
               payload: nil,
@@ -154,11 +162,16 @@ RSpec.describe Falcon::Configuration, type: :model do
           end
         end
 
-        context 'when name does not exist' do
+        context 'when name exist' do
           let(:name) { :parse }
 
           it { is_expected.to be_a(Falcon::Options) }
-          it { is_expected.to have_attributes(default_options.merge(suffix: 20)) }
+          it do
+            is_expected.to have_attributes(default_options.merge(
+                                             suffix: 20,
+                                             headers: headers.merge('X-Parse-Session-Token' => 1020)
+                                           ))
+          end
         end
       end
     end
