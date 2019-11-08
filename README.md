@@ -4,7 +4,7 @@
 [![Maintainability][code_climate_maintainability_image]][code_climate_maintainability_page]
 [![Test Coverage][code_climate_test_coverage_image]][code_climate_test_coverage_page]
 
-An easy and customisable http client using Faraday
+A customisable http client using Faraday
 
 ## Installation
 
