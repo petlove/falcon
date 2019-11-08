@@ -17,6 +17,12 @@ gem 'falcon', github: 'petlove/falcon'
 and run:
 
 ```
+rake falcon:install
+```
+
+ or
+ 
+```
 rails falcon:install
 ```
 
