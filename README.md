@@ -21,7 +21,7 @@ rake falcon:install
 ```
 
  or
- 
+
 ```
 rails falcon:install
 ```
@@ -34,14 +34,24 @@ Set the settings in the file _config/initializers/falcon.rb_:
 
 Falcon.configure do |config|
   # config.add :option_name, option_params_hash
-  # config.add :parse,
-  #            raise_error: true,
-  #            url: ENV['PARSE_URL'],
-  #            headers: {
-  #              'Content-Type' => 'application/json',
-  #              'X-Parse-Application-Id' => ENV['PARSE_APPLICATION_ID'],
-  #              'X-Parse-REST-API-Key' => ENV['PARSE_REST_API_KEY']
-  #            }
+
+  config.add :cloudflare,
+             raise_error: true,
+             url: ENV['URL_1'],
+             headers: {
+               'Content-Type' => 'application/json',
+               'X-Application-Id' => ENV['APPLICATION_ID_1'],
+               'X-REST-API-Key' => ENV['REST_API_KEY_1']
+             }
+
+  config.add :micro_service_2,
+             raise_error: true,
+             url: ENV['URL_2'],
+             headers: {
+               'Content-Type' => 'application/json',
+               'X-Application-Id' => ENV['APPLICATION_ID_2'],
+               'X-REST-API-Key' => ENV['REST_API_KEY_2']
+             }
 end
 ```
 
@@ -71,7 +81,7 @@ module Cloudflare
       ## If you add the option in the initilializer you can do it:
       ## falcon_options :cloudflare
 
-      ## If you want to customize the option saved you cad do it:
+      ## If you want to customize the option saved you can do it:
       ## falcon_options :cloudflare, suffix: 20, raise_error: false
 
       class << self
