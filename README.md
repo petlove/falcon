@@ -44,6 +44,7 @@ Falcon.configure do |config|
                'X-REST-API-Key' => ENV['REST_API_KEY_1']
              }
 
+  # you can initialize more than one configuration
   config.add :micro_service_2,
              raise_error: true,
              url: ENV['URL_2'],
@@ -78,7 +79,7 @@ module Cloudflare
                        'Authorization' => ENV['CLOUDFLARE_API_TOKEN']
                      }
 
-      ## If you add the option in the initilializer you can do it:
+      ## If you add the option in the initializer you can do it:
       ## falcon_options :cloudflare
 
       ## If you want to customize the option saved you can do it:
