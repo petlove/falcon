@@ -36,7 +36,7 @@ GEM
       pry (~> 0.10)
     public_suffix (4.0.1)
     rainbow (3.0.0)
-    rake (10.5.0)
+    rake (13.0.6)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -87,7 +87,7 @@ DEPENDENCIES
   dotenv (~> 2.7.5)
   falcon!
   pry-byebug (>= 3.7.0)
-  rake (~> 10.0)
+  rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (>= 0.74.0)
   rubocop-performance (>= 1.4.1)
